@@ -1,0 +1,6 @@
+exclude:
+- node_modules
+sass:
+  style: compressed
+  exclude:
+  - node_modules

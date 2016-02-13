@@ -1,0 +1,32 @@
+{
+  "name": "episodeyang.github.io",
+  "version": "1.0.0",
+  "description": "Ge Yang's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jekyll serve --watch",
+    "watch": "browser-sync start --browser safari --proxy localhost:4000 --files '_site/**/*.*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/episodeyang/episodeyang.github.io.git"
+  },
+  "keywords": [
+    "Ge",
+    "Yang",
+    "episodeyang",
+    "Escherpad",
+    "SpruceLearning",
+    "Sunshine-Library"
+  ],
+  "author": "Ge Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/episodeyang/episodeyang.github.io/issues"
+  },
+  "homepage": "https://github.com/episodeyang/episodeyang.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1"
+  }
+}

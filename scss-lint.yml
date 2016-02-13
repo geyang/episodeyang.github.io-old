@@ -1,0 +1,4 @@
+# included files
+scss_files: '**/*.scss'
+
+linters:
