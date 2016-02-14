@@ -1,0 +1,67 @@
+// Created by ge on 1/25/16.
+@import "./selection";
+
+// todo: need to finish the button mixin to use as standard button styling.
+@mixin base-button($className,
+  $color, $background-color,
+  $color-on-hover, $background-color-on-hover, $glow-color-on-hover,
+  $background-color-on-active, $inset-color-on-active,
+  $disabled-color, $disabled-background-color, $disabled-border
+) {
+  #{$className} {
+    border: none;
+    box-sizing: border-box;
+    &:not(.disabled) {
+      @include cursor-hand();
+    }
+
+    // styling
+    color: $color;
+    background-color: $background-color;
+    &:hover:not(.disabled) {
+      color: $color-on-hover;
+      background-color: $background-color-on-hover;
+      box-shadow: 0 0 6px $glow-color-on-hover;
+    }
+    &:active:not(.disabled) {
+      background-color: $background-color-on-active;
+      box-shadow: inset 0 1px 2px $inset-color-on-active;
+    }
+    &:focus:not(.disabled) {
+      outline: none;
+      box-shadow: 0 0 6px $glow-color-on-hover;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      color: $disabled-color;
+      background-color: $disabled-background-color;
+      border: solid 1px $disabled-border;
+    }
+  }
+}
+
+@mixin button($height, $border-radius, $padding-top, $padding-side) {
+  & {
+    height: $height;
+    border-radius: $border-radius;
+    padding: $padding-top, $padding-side;
+  }
+}
+@mixin async-button($height, $padding-side) {
+  & {
+    transition: padding-right 0.5s ease;
+  }
+  &.pending {
+    padding-right: $padding-side + $height;
+  }
+}
+
+// button shape and layout mixins
+// button that are rounded on the corner.
+@mixin square-button() {
+  border-radius: 14px;
+}
+
+// button that are round on each end.
+@mixin round-button($height) {
+}

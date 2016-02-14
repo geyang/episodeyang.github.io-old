@@ -1,0 +1,17 @@
+// Created by ge on 2/12/16.
+
+@mixin full-pane() {
+  .full-pane {
+    position: relative;
+    overflow: hidden;
+  }
+  .full-pane:not(.projects-container) {
+    height: 100%;
+    width: 100%;
+  }
+  .full-pane.projects-container {
+    min-height: 100%;
+    width: 100%;
+    overflow-y: auto;
+  }
+}

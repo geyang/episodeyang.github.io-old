@@ -1,0 +1,14 @@
+// Created by ge on 2/13/16.
+
+@mixin img-fit-width () {
+  img.fit-width {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+@mixin img-fit-height () {
+  img.fit-height {
+    min-width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+// Created by ge on 2/12/16.
+@import "../mixins/style-mixins/layouts";
+
+@mixin frontpage-layout($sm-bp, $container-selector) {
+  // large format
+  @media (min-width: $sm-bp) {
+    #{$container-selector} {
+      @include flex-row-container();
+      .text-pane, .photo-pane {
+        @include flex-fluid();
+        width: 50%;
+        height: 100%;
+      }
+      .text-pane {
+        @include flex-row-container();
+        align-items: center;
+        justify-content: center;
+        .text-box {
+          @include flex-fixed();
+          max-width: 400px;
+        }
+
+      }
+      #designer {
+        position: fixed;
+        z-index: -1;
+        min-width: 50%;
+        right: 0;
+      }
+      #developer {
+        right: 0;
+      }
+    }
+  }
+  @media (max-width: ($sm-bp - 1px)) {
+    // small format
+    #{$container-selector} {
+      position: relative;
+      @include flex-row-container();
+      .photo-pane {
+        @include flex-fluid();
+        width: 50%;
+      }
+      .text-pane {
+        opacity: 0.95;
+        position: fixed;
+        left: 45px;
+        top: 180px;
+        width: 35%;
+        padding: 25px;
+        z-index: 1;
+        .text-box {
+        }
+      }
+      .photo-pane {
+        img {
+          transform: scale(1.4, 1.4) translateX(10%);
+        }
+      }
+      #designer {
+        position: fixed;
+        z-index: -1;
+        min-width: 100%;
+        right: 0;
+      }
+      #developer {
+        right: 15%;
+      }
+    }
+  }
+}

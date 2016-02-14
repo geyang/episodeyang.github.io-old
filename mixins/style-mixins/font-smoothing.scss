@@ -1,0 +1,9 @@
+@mixin font-smoothing ($reset:null) {
+  @if ($reset) {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  } @else {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,192 @@
+// Created by ge on 1/25/16.
+@mixin three-bar-loader () {
+  .three-bar-loader,
+  .three-bar-loader:before,
+  .three-bar-loader:after {
+    background: #ffffff;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+  }
+  .three-bar-loader:before,
+  .three-bar-loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+  }
+  .three-bar-loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  .three-bar-loader {
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  .three-bar-loader:after {
+    left: 1.5em;
+  }
+  @-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0 #ffffff;
+      height: 4em;
+    }
+    40% {
+      box-shadow: 0 -2em #ffffff;
+      height: 5em;
+    }
+  }
+  @keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0 #ffffff;
+      height: 4em;
+    }
+    40% {
+      box-shadow: 0 -2em #ffffff;
+      height: 5em;
+    }
+  }
+
+}
+
+@mixin slinky-circular-loader (){
+  .slinky-circular-loader,
+  .slinky-circular-loader:before,
+  .slinky-circular-loader:after {
+    border-radius: 50%;
+  }
+  .slinky-circular-loader:before,
+  .slinky-circular-loader:after {
+    position: absolute;
+    content: '';
+  }
+  .slinky-circular-loader:before {
+    width: 5.2em;
+    height: 10.2em;
+    background: #0dc5c1;
+    border-radius: 10.2em 0 0 10.2em;
+    top: -0.1em;
+    left: -0.1em;
+    -webkit-transform-origin: 5.2em 5.1em;
+    transform-origin: 5.2em 5.1em;
+    -webkit-animation: load2 2s infinite ease 1.5s;
+    animation: load2 2s infinite ease 1.5s;
+  }
+  .slinky-circular-loader {
+    font-size: 11px;
+    text-indent: -99999em;
+    margin: 55px auto;
+    position: relative;
+    width: 10em;
+    height: 10em;
+    box-shadow: inset 0 0 0 1em #ffffff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .slinky-circular-loader:after {
+    width: 5.2em;
+    height: 10.2em;
+    background: #0dc5c1;
+    border-radius: 0 10.2em 10.2em 0;
+    top: -0.1em;
+    left: 5.1em;
+    -webkit-transform-origin: 0px 5.1em;
+    transform-origin: 0px 5.1em;
+    -webkit-animation: load2 2s infinite ease;
+    animation: load2 2s infinite ease;
+  }
+  @-webkit-keyframes load2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+}
+
+@mixin three-dots-loader() {
+  .three-dots-loader:before,
+  .three-dots-loader:after,
+  .three-dots-loader {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+  }
+  .three-dots-loader {
+    font-size: 10px;
+    margin: 80px auto;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  .three-dots-loader:before {
+    left: -3.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  .three-dots-loader:after {
+    left: 3.5em;
+  }
+  .three-dots-loader:before,
+  .three-dots-loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  @-webkit-keyframes load7 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 2.5em 0 -1.3em #ffffff;
+    }
+    40% {
+      box-shadow: 0 2.5em 0 0 #ffffff;
+    }
+  }
+  @keyframes load7 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 2.5em 0 -1.3em #ffffff;
+    }
+    40% {
+      box-shadow: 0 2.5em 0 0 #ffffff;
+    }
+  }
+
+}

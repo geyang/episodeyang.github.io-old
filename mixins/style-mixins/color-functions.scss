@@ -1,0 +1,9 @@
+// convert transparent color in rgba to solid color for background color
+@mixin rgba2solid($color, $background) {
+  $myred: red($color);
+  $mygreen: green($color);
+  $myblue: blue($color);
+  $myalpha: alpha($color);
+  background-color: mix(rgb($myred, $mygreen, $myblue), $background, percentage($myalpha / ($myalpha + 1)));
+  //background-color: rgba($myred, $mygreen, $myblue, percentage($myalpha));
+}

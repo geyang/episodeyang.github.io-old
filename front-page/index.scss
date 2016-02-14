@@ -1,0 +1,20 @@
+---
+---
+
+// Created by ge on 2/12/16
+@import "style-mixins/reset.scss";
+@import "style-mixins/img-default.scss";
+@import "style-mixins/img-layouts.scss";
+@import "frontpage-layout";
+@import "full-pane.scss";
+
+@include reset();
+@include img-default();
+@include img-fit-width();
+@include img-fit-height();
+// layout
+@include frontpage-layout(996px, '.page-container');
+@include full-pane();
+
+// styles
+@import "styling.scss";

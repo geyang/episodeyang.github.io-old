@@ -1,0 +1,52 @@
+// Created by ge on 2/12/16.
+// default
+.text-pane {
+  transition: all 1s ease;
+  opacity: 1;
+}
+.text-pane, .text-pane[scroll="designer"] {
+  background-color: #f0914f;
+}
+.text-pane[scroll="developer"] {
+  background-color: #477BFF;
+}
+.text-pane[scroll="projects"] {
+  background-color: #70696f;
+}
+@media (max-width: 999px) {
+  .text-pane[scroll="projects"] {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.photo-pane {
+  overflow-y: auto;
+}
+.projects-container {
+  background-color: #ccc;
+  height: 120%;
+}
+
+.text-box {
+  font-family: "proxima nova light", "Helvetica Neue", Helvetica, 'Raleway', Arial, sans-serif, 'Roboto Slab';
+  color: white;
+
+  h1 {
+    font-weight: 500;
+    font-size: 240%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    font-weight: 500;
+    font-size: 140%;
+    margin-bottom: 20px;
+  }
+  .main-text {
+    font-weight: 400;
+    font-size: 120%;
+    line-height: 1.7em;
+    margin-bottom: 30px;
+  }
+}

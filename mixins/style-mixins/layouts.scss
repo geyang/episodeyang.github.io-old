@@ -1,0 +1,60 @@
+// layout tools
+@mixin flex-fixed {
+  flex: 0 0 auto;
+}
+
+@mixin flex-fluid {
+  flex: 1 1 auto;
+}
+
+@mixin flex-column-container {
+  display: flex !important;
+  flex-direction: column;
+  > .flex-fixed {
+    flex: 0 0 auto;
+  }
+  > .flex-fluid {
+    flex: 1 1 auto;
+  }
+  &.flex-justify {
+    > .flex-fixed, > .flex-fluid {
+      justify-content: space-between;
+    }
+  }
+}
+
+@mixin flex-row-container {
+  display: flex !important;
+  flex-direction: row;
+  > .flex-fixed {
+    flex: 0 0 auto;
+  }
+  > .flex-fluid {
+    flex: 1 1 auto;
+  }
+}
+
+@mixin centering-inner {
+  align-self: center;
+}
+
+@mixin centering-wrap {
+  display: flex;
+  justify-content: center;
+  > .centering-inner {
+    @include centering-inner();
+  }
+}
+
+
+@mixin full-span {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+
+  padding: 0;
+  margin: 0;
+}
+
