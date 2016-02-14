@@ -1,3 +1,10 @@
-@mixin touch-scroll(){
+@mixin touch-scroll($scroll-direction:false){
+  @if $scroll-direction == x {
+    overflow-x: scroll;
+  } @else if $scroll-direction == y {
+    overflow-y: scroll;
+  } @else if $scroll-direction == xy {
+    overflow: scroll;
+  }
   -webkit-overflow-scrolling: touch;
 }

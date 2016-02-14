@@ -94,13 +94,14 @@ $md-w: ($md-h * 1.25);
   }
 }
 
+@import "touch-scroll";
 body.page-container {
   // styles
   font-family: 'Gotham', sans-serif;
 
   // layout
   position: relative;
-  overflow-y: auto;
+  @include touch-scroll(y);
   overflow-x: hidden;
 }
 
@@ -200,6 +201,7 @@ $navbar-height: 50px;
 
 @import "fade-in";
 @include fade-in-keyframe();
+@include fade-in-animation('.fade-in-navbar', 0.8s, 20s);
 @include fade-in-animation('.fade-in-header', 0.8s, 0s);
 @include fade-in-animation('.fade-in-0-100', 0s, 1s);
 @include fade-in-animation('.fade-in-1', 0.8s, 1.5s);

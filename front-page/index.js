@@ -13,7 +13,8 @@ function app() {
     function onScroll(scrollTarget) {
         return function () {
             //console.log([event.target]);
-            var opacity = 1 -  Math.min(scrollTarget.scrollTop / pageHeight * 1, 1);
+            var scrollProgress = scrollTarget.scrollTop / pageHeight;
+            var opacity = 1 -  Math.min(scrollProgress * 1, 1);
             var shiftUp = (1 - opacity) * pageHeight * 0.3;
             fixedHero.setAttribute('style', "opacity: " + opacity + "; top: " + (- shiftUp) + "px;" );
             //console.log(opacity);
