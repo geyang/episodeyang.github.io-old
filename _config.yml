@@ -1,9 +1,8 @@
+safe: true
 exclude:
 - node_modules
-sass:
+scss:
   style: compressed
-  load_paths:
-  - mixins
-  - front-page
+  sass_dir: style-mixins
   exclude:
   - node_modules
