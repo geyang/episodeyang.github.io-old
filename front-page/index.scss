@@ -7,7 +7,7 @@
 @import "img-layouts.scss";
 @include reset();
 
-$sm-h: 745px;
+$sm-h: 645px;
 $md-h: 855px;
 .fixed-hero {
   .header-box, h1, p {
@@ -80,6 +80,7 @@ body.page-container {
   align-items: center;
   justify-content: center;
   .header-box {
+    margin-bottom: 10%;
     @include flex-fixed();
     align-items: baseline;
 
