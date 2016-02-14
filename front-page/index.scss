@@ -8,15 +8,45 @@
 @include reset();
 
 $sm-h: 645px;
+$sm-w: ($sm-h * 1.25);
 $md-h: 855px;
+$md-w: ($sm-h * 1.25);
 .fixed-hero {
   .header-box, h1, p {
     transition: all 0.3s ease;
   }
 }
-@media (max-height: ($sm-h - 1px)) {
+
+@import "layouts";
+
+@media (max-width: ($sm-w - 1px)) {
   .fixed-hero .header-box {
-    max-width: 500px;
+    width: 500px;
+    margin-bottom: 20px;
+    @include flex-column-container(true);
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-left: 0;
+    }
+  }
+}
+@media (min-width: $sm-w) {
+  .fixed-hero .header-box {
+    width: 500px;
+    margin-bottom: 20px;
+    @include flex-row-container();
+    p {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-height: ($sm-h - 1px)), (max-width: ($sm-w - 1px) )  {
+  .fixed-hero .header-box {
+    width: 500px;
+    margin-bottom: 20px;
   }
   .fixed-hero h1 {
     font-size: 40px;
@@ -26,9 +56,10 @@ $md-h: 855px;
   }
 }
 
-@media (min-height: $sm-h) and (max-height: ($md-h - 1px)) {
+@media (min-height: $sm-w), (min-width: $sm-w) {
   .fixed-hero .header-box {
-    max-width: 700px;
+    width: 700px;
+    margin-bottom: 40px;
   }
   .fixed-hero h1 {
     font-size: 60px;
@@ -40,7 +71,8 @@ $md-h: 855px;
 
 @media (min-height: $md-h) {
   .fixed-hero .header-box {
-    max-width: 900px;
+    width: 900px;
+    margin-bottom: 80px;
   }
   .fixed-hero h1 {
     font-size: 80px;
@@ -50,7 +82,6 @@ $md-h: 855px;
   }
 }
 
-@import "layouts";
 body.page-container {
   // styles
   font-family: 'Gotham', sans-serif;
@@ -76,20 +107,17 @@ body.page-container {
   position: fixed;
   height: 100%;
   width: 100%;
-  @include flex-column-container();
+  @include flex-row-container();
   align-items: center;
   justify-content: center;
   .header-box {
-    margin-bottom: 10%;
+    max-width: 80%;
     @include flex-fixed();
     align-items: baseline;
-
-    @include flex-row-container();
     h1 {
       @include flex-fixed()
     }
     p {
-      margin-left: 10px;
       line-height: 1.3;
       @include flex-fluid()
     }

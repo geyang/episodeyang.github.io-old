@@ -4,6 +4,5 @@ exclude:
 - node_modules
 scss:
   style: compressed
-  sass_dir: style-mixins
   exclude:
   - node_modules

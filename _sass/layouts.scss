@@ -7,9 +7,13 @@
   flex: 1 1 auto;
 }
 
-@mixin flex-column-container {
+@mixin flex-column-container($important:false) {
   display: flex !important;
-  flex-direction: column;
+  @if $important {
+    flex-direction: column !important;
+  } @else {
+    flex-direction: column;
+  }
   > .flex-fixed {
     flex: 0 0 auto;
   }
@@ -23,9 +27,13 @@
   }
 }
 
-@mixin flex-row-container {
+@mixin flex-row-container ($important:false) {
   display: flex !important;
-  flex-direction: row;
+  @if $important {
+    flex-direction: row !important;
+  } @else {
+    flex-direction: row;
+  }
   > .flex-fixed {
     flex: 0 0 auto;
   }
