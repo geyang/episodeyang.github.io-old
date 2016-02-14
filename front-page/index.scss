@@ -10,7 +10,7 @@
 $sm-h: 645px;
 $sm-w: ($sm-h * 1.25);
 $md-h: 855px;
-$md-w: ($sm-h * 1.25);
+$md-w: ($md-h * 1.25);
 .fixed-hero {
   .header-box, h1, p {
     transition: all 0.3s ease;
@@ -23,12 +23,15 @@ $md-w: ($sm-h * 1.25);
   .fixed-hero .header-box {
     width: 500px;
     margin-bottom: 20px;
-    @include flex-column-container(true);
+    @include flex-column-container();
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     p {
       margin-left: 0;
+    }
+    .third-person {
+      display: none;
     }
   }
 }
@@ -37,13 +40,20 @@ $md-w: ($sm-h * 1.25);
     width: 500px;
     margin-bottom: 20px;
     @include flex-row-container();
+    h1 {
+      margin: 0;
+    }
     p {
       margin-left: 10px;
+    }
+    .first-person {
+      display: none;
     }
   }
 }
 
-@media (max-height: ($sm-h - 1px)), (max-width: ($sm-w - 1px) )  {
+// default
+@media screen {
   .fixed-hero .header-box {
     width: 500px;
     margin-bottom: 20px;
@@ -56,7 +66,7 @@ $md-w: ($sm-h * 1.25);
   }
 }
 
-@media (min-height: $sm-w), (min-width: $sm-w) {
+@media (min-height: $sm-h), (min-height: $md-h) and (min-width: $sm-w) {
   .fixed-hero .header-box {
     width: 700px;
     margin-bottom: 40px;
@@ -69,7 +79,7 @@ $md-w: ($sm-h * 1.25);
   }
 }
 
-@media (min-height: $md-h) {
+@media screen and (min-height: $md-h) and (min-width: $md-w) {
   .fixed-hero .header-box {
     width: 900px;
     margin-bottom: 80px;
