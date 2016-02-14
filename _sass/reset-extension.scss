@@ -1,0 +1,9 @@
+/** Created by ge on 2/14/16. */
+@import "selection";
+
+@mixin reset-extention () {
+    a {
+        text-decoration: none;
+        @include cursor-hand();
+    }
+}

@@ -3,9 +3,11 @@
 
 // Created by ge on 2/12/16
 @import "reset.scss";
+@import "reset-extension.scss";
 @import "img-default.scss";
 @import "img-layouts.scss";
 @include reset();
+@include reset-extention();
 
 $sm-h: 645px;
 $sm-w: ($sm-h * 1.25);
@@ -102,6 +104,52 @@ body.page-container {
   overflow-x: hidden;
 }
 
+$page-width: 900px;
+.page-width-container {
+  max-width: $page-width;
+  width: 100%;
+  @include flex-row-container();
+  @include flex-fixed();
+}
+
+$navbar-height: 50px;
+.fixed-navbar {
+  // style
+  font-size: 90%;
+  font-family: 'Gotham', sans-serif;
+  .item.emphasis {
+    font-size: 120%;
+  }
+
+  // layout
+  position: fixed;
+  width: 100%;
+  left: auto; right: auto;
+  z-index: 1;
+
+  height: $navbar-height;
+  @include flex-row-container();
+  justify-content: center;
+  .item, .spacer {
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+  .item {
+    @include flex-fixed();
+    padding: 0 15px;
+    &:hover {
+      background-color: rgba(black, 0.025);
+    }
+    &:active {
+      background-color: rgba(black, 0.05);
+    }
+  }
+  .spacer {
+    @include flex-fluid();
+  }
+  width: 100%;
+}
+
 .fixed-hero {
   // styles
   h1 {
@@ -114,6 +162,7 @@ body.page-container {
   }
 
   // layouts
+  z-index: -1;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -137,3 +186,28 @@ body.page-container {
 .fixed-hero-shadow {
   height: 100%;
 }
+
+.content-container {
+  min-height: 100%;
+  background-color: blue;
+}
+
+
+// animations
+@mixin fade-in-keyframe () {
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+}
+@mixin fade-in-animation ($selector, $duration, $delay:0) {
+  #{$selector} {
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; // run only one time
+    animation-fill-mode:forwards;
+    animation-duration: $duration;
+    animation-delay: $delay;
+  }
+}
+
+@include fade-in-keyframe();
+@include fade-in-animation('.fade-in-30-0', 0.3s, 0s);
+@include fade-in-animation('.fade-in-100-100', 1s, 1s);
+
