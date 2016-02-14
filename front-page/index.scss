@@ -5,151 +5,96 @@
 @import "reset.scss";
 @import "img-default.scss";
 @import "img-layouts.scss";
+@include reset();
+
+$sm-h: 745px;
+$md-h: 855px;
+.fixed-hero {
+  .header-box, h1, p {
+    transition: all 0.3s ease;
+  }
+}
+@media (max-height: ($sm-h - 1px)) {
+  .fixed-hero .header-box {
+    max-width: 500px;
+  }
+  .fixed-hero h1 {
+    font-size: 40px;
+  }
+  .fixed-hero p {
+    font-size: 16px;
+  }
+}
+
+@media (min-height: $sm-h) and (max-height: ($md-h - 1px)) {
+  .fixed-hero .header-box {
+    max-width: 700px;
+  }
+  .fixed-hero h1 {
+    font-size: 60px;
+  }
+  .fixed-hero p {
+    font-size: 21px;
+  }
+}
+
+@media (min-height: $md-h) {
+  .fixed-hero .header-box {
+    max-width: 900px;
+  }
+  .fixed-hero h1 {
+    font-size: 80px;
+  }
+  .fixed-hero p {
+    font-size: 21px;
+  }
+}
 
 @import "layouts";
-@mixin frontpage-layout($sm-bp, $container-selector) {
-  // large format
-  @media (min-width: $sm-bp) {
-    #{$container-selector} {
-      @include flex-row-container();
-      .text-pane, .photo-pane {
-        @include flex-fluid();
-        width: 50%;
-        height: 100%;
-      }
-      .text-pane {
-        @include flex-row-container();
-        align-items: center;
-        justify-content: center;
-        .text-box {
-          @include flex-fixed();
-          max-width: 400px;
-        }
+body.page-container {
+  // styles
+  font-family: 'Gotham', sans-serif;
 
-      }
-      #designer {
-        position: fixed;
-        z-index: -1;
-        min-width: 50%;
-        right: 0;
-      }
-      #developer {
-        right: 0;
-      }
-    }
-  }
-  @media (max-width: ($sm-bp - 1px)) {
-    // small format
-    #{$container-selector} {
-      position: relative;
-      @include flex-row-container();
-      .photo-pane {
-        @include flex-fluid();
-        width: 50%;
-      }
-      .text-pane {
-        opacity: 0.95;
-        position: fixed;
-        left: 45px;
-        top: 180px;
-        width: 35%;
-        padding: 25px;
-        z-index: 1;
-        .text-box {
-        }
-      }
-      .photo-pane {
-        img {
-          transform: scale(1.4, 1.4) translateX(10%);
-        }
-      }
-      #designer {
-        position: fixed;
-        z-index: -1;
-        min-width: 100%;
-        right: 0;
-      }
-      #developer {
-        right: 15%;
-      }
-    }
-  }
-}
-
-@mixin full-pane() {
-  .full-pane {
-    position: relative;
-    overflow: hidden;
-  }
-  .full-pane:not(.projects-container) {
-    height: 100%;
-    width: 100%;
-  }
-  .full-pane.projects-container {
-    min-height: 100%;
-    width: 100%;
-    overflow-y: auto;
-  }
-}
-
-@include reset();
-@include img-default();
-@include img-fit-width();
-@include img-fit-height();
-// layout
-@include frontpage-layout(996px, '.page-container');
-@include full-pane();
-
-/* styles */
-// Created by ge on 2/12/16.
-// default
-.text-pane {
-  transition: all 1s ease;
-  opacity: 1;
-}
-.text-pane, .text-pane[scroll="designer"] {
-  background-color: #f0914f;
-}
-.text-pane[scroll="developer"] {
-  background-color: #477BFF;
-}
-.text-pane[scroll="projects"] {
-  background-color: #70696f;
-}
-@media (max-width: 999px) {
-  .text-pane[scroll="projects"] {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
-.photo-pane {
+  // layout
+  position: relative;
   overflow-y: auto;
-}
-.projects-container {
-  background-color: #ccc;
-  height: 120%;
+  overflow-x: hidden;
 }
 
-.text-box {
-  font-family: "proxima nova light", "Helvetica Neue", Helvetica, 'Raleway', Arial, sans-serif, 'Roboto Slab';
-  color: white;
-
+.fixed-hero {
+  // styles
   h1 {
-    font-weight: 500;
-    font-size: 240%;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    color: #222;
+    font-weight: 100;
   }
-  .subtitle {
-    font-weight: 500;
-    font-size: 140%;
-    margin-bottom: 20px;
+  p {
+    color: #777;
+    font-weight: 100;
   }
-  .main-text {
-    font-weight: 400;
-    font-size: 120%;
-    line-height: 1.7em;
-    margin-bottom: 30px;
+
+  // layouts
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  @include flex-column-container();
+  align-items: center;
+  justify-content: center;
+  .header-box {
+    @include flex-fixed();
+    align-items: baseline;
+
+    @include flex-row-container();
+    h1 {
+      @include flex-fixed()
+    }
+    p {
+      margin-left: 10px;
+      line-height: 1.3;
+      @include flex-fluid()
+    }
   }
+}
+
+.fixed-hero-shadow {
+  height: 100%;
 }
