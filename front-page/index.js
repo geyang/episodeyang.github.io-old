@@ -18,7 +18,7 @@ function app() {
         function scrollHandler() {
             pageHeight = getWindowHeight();
             var scrollProgress = scrollTarget.scrollTop / pageHeight;
-            var opacity = 1 - Math.min(scrollProgress * 1, 1);
+            var opacity = 1 - Math.min(scrollProgress * 1.15, 1);
             var shiftUp = (1 - opacity) * pageHeight * 0.3;
 
             fixedHero.setAttribute('style', "opacity: " + opacity.toString().slice(0, 4) + "; top: " + ( -shiftUp) + "px;");
