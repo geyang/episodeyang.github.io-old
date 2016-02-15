@@ -249,9 +249,10 @@ $item-padding: 12px;
     width: 320px;
   }
   // layout
-  min-height: 120%;
+  box-sizing: border-box;
+  min-height: 100%;
   background-color: #f7f7f7;
-  padding: ($navbar-height + 25px) 40px;
+  padding: ($navbar-height) 40px;
   @include flex-row-container();
   flex-wrap: wrap;
   align-items: flex-start;
@@ -263,7 +264,7 @@ $item-padding: 12px;
   }
   .section-header {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 }
