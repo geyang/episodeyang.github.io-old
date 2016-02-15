@@ -14,8 +14,9 @@ $sm-w: ($sm-h * 1.25);
 $md-h: 855px;
 $md-w: ($md-h * 1.25);
 .fixed-hero {
+  //transition: all 0.08s linear;
   .header-box, h1, p {
-    transition: all 0.3s ease;
+    transition: all 0.3s linear;
   }
 }
 
@@ -107,6 +108,7 @@ body.page-container {
 
 $page-width: 900px;
 .page-width-container {
+  position: relative;
   max-width: $page-width;
   width: 100%;
   @include flex-row-container();
@@ -116,8 +118,10 @@ $page-width: 900px;
 $navbar-height: 50px;
 .fixed-navbar {
   // style
+  transition: all 0.15s linear;
   font-size: 90%;
   font-family: 'Gotham', sans-serif;
+  background-color: white;
   .item.emphasis {
     font-size: 120%;
   }
@@ -193,7 +197,7 @@ $navbar-height: 50px;
 
 .content-container {
   min-height: 120%;
-  background-color: blue;
+  background-color: #f7f7f7;
 }
 
 
@@ -201,7 +205,6 @@ $navbar-height: 50px;
 
 @import "fade-in";
 @include fade-in-keyframe();
-@include fade-in-animation('.fade-in-navbar', 0.8s, 20s);
 @include fade-in-animation('.fade-in-header', 0.8s, 0s);
 @include fade-in-animation('.fade-in-0-100', 0s, 1s);
 @include fade-in-animation('.fade-in-1', 0.8s, 1.5s);
