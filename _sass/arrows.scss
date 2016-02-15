@@ -1,0 +1,23 @@
+// Created by ge on 2/15/16.
+
+@mixin thin-arrow($angle, $size, $length, $border-width, $color, $border-style:solid) {
+  .arrow:before, .arrow:after {
+    display: block;
+    position: absolute;
+    content: " ";
+    border: 0 $border-style $color;
+    transform-origin: top left;
+  }
+  .arrow:before {
+    border-width: $border-width 0 0 $border-width;
+    width: $size;
+    height: $size;
+    transform: rotate((180deg - $angle - 45deg));
+  }
+  .arrow:after {
+    border-top-width: $border-width;
+    width: $length;
+    transform: rotate((180deg - $angle)) translate(($border-width/2), -($border-width/2));
+  }
+
+}

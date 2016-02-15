@@ -10,6 +10,7 @@ function app() {
     var fixedHero = document.querySelector('.fixed-hero');
     var navbarContent = document.querySelector('.fixed-navbar>.page-width-container');
     var contentContainer = document.querySelector('.content-container');
+    var arrow = document.querySelector('.fixed-hero-shadow');
     var pageHeight;
 
     function onScroll(scrollTarget) {
@@ -31,6 +32,12 @@ function app() {
                 )
             );
             navbarContent.setAttribute('style', "top: " + navbarTop.toString().slice(0, 6) + "px;");
+
+
+            var arrowOpacity = 1 - Math.min(scrollTarget.scrollTop / 40, 1);
+            arrow.setAttribute('style', 'opacity: ' + arrowOpacity.toString().slice(0, 4) + ';');
+            // remove the fade-in-arrow class.
+            arrow.className = "fixed-hero-shadow";
         }
 
         return scrollHandler;

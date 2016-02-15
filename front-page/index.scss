@@ -206,10 +206,36 @@ $item-padding: 12px;
       @include flex-fluid()
     }
   }
+
 }
 
 .fixed-hero-shadow {
+  // style
+  .label {
+    font-size: 10px;
+  }
+
+  // layout
   height: 100%;
+  position: relative;
+  @import "arrows";
+  @include thin-arrow(-90deg, 10px, 60px, 1px, black);
+  .arrow, .label {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    margin: 0 auto;
+  }
+  .arrow{width: 0;}
+  $label-height: 25px;
+  .label {
+    width: 60px;
+    text-align: center;
+    bottom: 20px;
+    height: $label-height;
+    line-height: $label-height;
+    background-color: white;
+  }
 }
 
 .content-container {
@@ -289,5 +315,6 @@ $radius: 12px;
 @include fade-in-animation('.fade-in-1', 0.8s, 1.5s);
 @include fade-in-animation('.fade-in-2', 0.8s, 1.65s);
 @include fade-in-animation('.fade-in-3', 0.8s, 1.8s);
+@include fade-in-animation('.fade-in-arrow', 0.8s, 5s);
 
 
