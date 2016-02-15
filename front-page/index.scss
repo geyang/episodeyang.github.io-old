@@ -128,8 +128,12 @@ $item-padding: 12px;
   font-size: 90%;
   font-family: 'Gotham', sans-serif;
   background-color: white;
+  .item {
+    font-weight: 100;
+  }
   .item.emphasis {
     font-size: 120%;
+    font-weight: 100;
   }
 
   // layout
@@ -210,6 +214,14 @@ $item-padding: 12px;
 
 .content-container {
   // styling
+  .section-header {
+    font-weight: 100;
+  }
+  .section-header h1 {
+    color: #333;
+    font-size: 180%;
+    width: 320px;
+  }
   // layout
   min-height: 120%;
   background-color: #f7f7f7;
@@ -222,6 +234,11 @@ $item-padding: 12px;
   .card {
     margin: 20px;
     @include flex-fixed();
+  }
+  .section-header {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
 }
 
