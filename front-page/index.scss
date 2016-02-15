@@ -103,6 +103,8 @@ body.page-container {
 
   // layout
   position: relative;
+  height: 100%; // needed for firefox to determine child element height correctly.
+  width: 100%;
   @include touch-scroll(y);
   overflow-x: hidden;
 }
