@@ -250,6 +250,13 @@ $item-padding: 12px;
     font-size: 180%;
     width: 320px;
   }
+  .card .text-container h1 {
+    color: #4e4444;
+  }
+  .card .hover-cover h1 {
+    color: white;
+    background-color: #00b3ee;
+  }
   // layout
   box-sizing: border-box;
   min-height: 100%;
@@ -261,8 +268,40 @@ $item-padding: 12px;
   align-content: flex-start;
   justify-content: flex-start;
   .card {
+    position: relative;
     margin: 20px;
     @include flex-fixed();
+  }
+  .card .hover-cover {
+    // style default
+    opacity: 0;
+    background-color: rgba(#555, .80);
+
+    transition: opacity 0.3s ease;
+
+    // layout
+    padding: 0;
+    h1 {
+      padding: 15px 25px 10px;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 100;
+    }
+
+    // centering
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .card.disabled {
+    cursor: not-allowed;
+    display: block;
+    &:hover .hover-cover {
+      display: block;
+      opacity: 1;
+    }
   }
   .section-header {
     width: 100%;
@@ -285,6 +324,12 @@ $radius: 12px;
   .text-container {
     border-radius: 0 0 $radius $radius;
   }
+  .hover-cover {
+    border-radius: $radius;
+    h1 {
+      border-radius: $radius $radius 0 0;
+    }
+  }
   h1 {
     color: black;
     font-size: 120%;
@@ -295,7 +340,6 @@ $radius: 12px;
     color: #777;
     font-size: 80%;
   }
-
 
   // layout
   width: $card-width;
