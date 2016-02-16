@@ -240,7 +240,10 @@ $item-padding: 12px;
   }
 }
 
-.content-container {
+#projects.section {
+  min-height: 100%;
+}
+.section {
   // styling
   .section-header {
     font-weight: 100;
@@ -259,7 +262,6 @@ $item-padding: 12px;
   }
   // layout
   box-sizing: border-box;
-  min-height: 100%;
   background-color: #f7f7f7;
   padding: ($navbar-height) 40px;
   @include flex-row-container();
@@ -312,7 +314,7 @@ $item-padding: 12px;
 
 $card-width: 300px;
 $radius: 12px;
-.content-container .card {
+.section .card {
   // style
   .text-container {
     background-color: white;
