@@ -9,7 +9,7 @@ function app() {
     var body = document.querySelector('body');
     var fixedHero = document.querySelector('.fixed-hero');
     var navbarContent = document.querySelector('.fixed-navbar>.page-width-container');
-    var contentContainer = document.querySelector('.content-container');
+    var contentContainer = document.querySelector('#projects');
     var arrow = document.querySelector('.fixed-hero-shadow');
     var pageHeight;
 
