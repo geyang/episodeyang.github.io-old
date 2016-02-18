@@ -2,10 +2,10 @@
 ---
 
 // Created by ge on 2/12/16
-@import "reset.scss";
-@import "reset-extension.scss";
-@import "img-default.scss";
-@import "img-layouts.scss";
+@import "mixins/reset.scss";
+@import "mixins/reset-extension.scss";
+@import "mixins/img-default.scss";
+@import "mixins/img-layouts.scss";
 @include reset();
 @include reset-extention();
 
@@ -20,7 +20,7 @@ $md-w: ($md-h * 1.25);
   }
 }
 
-@import "layouts";
+@import "mixins/layouts";
 
 @media (max-width: ($sm-w - 1px)) {
   .fixed-hero .header-box {
@@ -96,7 +96,7 @@ $md-w: ($md-h * 1.25);
   }
 }
 
-@import "touch-scroll";
+@import "mixins/touch-scroll";
 body.page-container {
   // styles
   font-family: 'Gotham', sans-serif;
@@ -118,64 +118,7 @@ $page-width: 900px;
   @include flex-fixed();
 }
 
-$navbar-height: 50px;
-$item-padding: 12px;
-.fixed-navbar {
-  // style
-  color: black;
-  a {
-    color: black;
-  }
-  transition: all 0.15s linear;
-  font-size: 90%;
-  font-family: 'Gotham', sans-serif;
-  background-color: white;
-  .item {
-    font-weight: 100;
-  }
-  .item.emphasis {
-    font-size: 120%;
-    font-weight: 100;
-  }
-
-  // layout
-  position: fixed;
-  width: 100%;
-  left: auto;
-  right: auto;
-  z-index: 1;
-
-  height: $navbar-height;
-  @include flex-row-container();
-  justify-content: center;
-  .item, .spacer {
-    height: $navbar-height;
-    line-height: $navbar-height;
-  }
-  .fixed-spacer {
-    @include flex-fixed();
-  }
-  .item {
-    @include flex-fixed();
-    padding: 0 ($item-padding/2);
-    &:first-child {
-      padding-left: $item-padding;
-    }
-    &:last-child {
-      padding-right: $item-padding;
-    }
-    &:hover {
-      background-color: rgba(black, 0.025);
-    }
-    &:active {
-      background-color: rgba(black, 0.05);
-    }
-  }
-  .spacer {
-    @include flex-fluid();
-  }
-  width: 100%;
-}
+@import "navbar.scss";
 
 .fixed-hero {
   // styles
@@ -220,7 +163,7 @@ $item-padding: 12px;
   // layout
   height: 100%;
   position: relative;
-  @import "arrows";
+  @import "mixins/arrows";
   @include thin-arrow(-90deg, 10px, 60px, 1px, black);
   .arrow, .label {
     position: absolute;
@@ -357,7 +300,7 @@ $radius: 12px;
 
 // animations
 
-@import "fade-in";
+@import "mixins/fade-in";
 @include fade-in-keyframe();
 @include fade-in-animation('.fade-in-header', 0.8s, 0s);
 @include fade-in-animation('.fade-in-0-100', 0s, 1s);

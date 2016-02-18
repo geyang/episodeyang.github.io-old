@@ -1,0 +1,64 @@
+// Created by ge on 2/16/16.
+@import "full-width";
+
+@import "mixins/layouts";
+@mixin article ($selector, $width) {
+  $sm-bp: ($width / 0.9);
+  @media (max-width: ($sm-bp - 1px) ) {
+    #{$selector} {
+      font-size: 21px;
+      > *:not(.full-width-block) {
+        width: 90%;
+      }
+    }
+  }
+  @media (min-width: $sm-bp) {
+    #{$selector} {
+      font-size: 21px;
+      > *:not(.full-width-block) {
+        width: $width;
+      }
+    }
+  }
+
+  #{$selector} {
+    // typesetting
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+
+    // style
+    color: rgba(black, 0.8);
+
+
+    position: relative;
+    @include flex-column-container();
+    align-items: center;
+    > * {
+      @include flex-fixed();
+    }
+    h1 {
+      font-size: 200%;
+      font-weight: 500;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 150%;
+      font-weight: 400;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      font-size: 130%;
+      font-weight: 300;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    p, .paragraph {
+      margin-bottom: 1em;
+    }
+  }
+}

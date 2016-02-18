@@ -1,0 +1,41 @@
+---
+---
+// Created by ge on 2/15/16.
+@import "mixins/reset.scss";
+@import "mixins/reset-extension.scss";
+@import "mixins/img-default.scss";
+@import "mixins/img-layouts.scss";
+@include reset();
+@include reset-extention();
+
+@import "mixins/layouts";
+
+@import "mixins/touch-scroll";
+body.page-container {
+  // styles
+  font-family: 'Gotham', sans-serif;
+
+  // layout
+  position: relative;
+  height: 100%; // needed for firefox to determine child element height correctly.
+  width: 100%;
+  @include touch-scroll(y);
+  overflow-x: hidden;
+}
+
+$page-width: 900px;
+.page-width-container {
+  position: relative;
+  max-width: $page-width;
+  width: 100%;
+  @include flex-row-container();
+  @include flex-fixed();
+}
+
+@import "navbar.scss";
+
+.post-content {
+  padding-top: 50px;
+}
+@import "article.scss";
+@include article('.post-content', 700px);

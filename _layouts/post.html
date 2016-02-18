@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{page.title}}</title>
+    <link href="/posts/index.css" rel="stylesheet">
+    <script src="/posts/index.js"></script>
+    {% if page.mathJax %}
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+            type="text/javascript"></script>
+    {% endif %}
+    <link rel="stylesheet" href="/posts/syntax.css" type="text/css"/>
+
+</head>
+<body class="page-container">
+    {% include navbar.html %}
+<div class="post-content">{{content}}</div>
+<div class="recommendation-footer"></div>
+</body>
+</html>

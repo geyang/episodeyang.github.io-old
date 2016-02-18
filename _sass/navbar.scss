@@ -1,0 +1,60 @@
+// Created by ge on 2/15/16.
+
+$navbar-height: 50px;
+$item-padding: 12px;
+.fixed-navbar {
+  // style
+  color: black;
+  a {
+    color: black;
+  }
+  transition: all 0.15s linear;
+  font-size: 90%;
+  font-family: 'Gotham', sans-serif;
+  background-color: white;
+  .item {
+    font-weight: 100;
+  }
+  .item.emphasis {
+    font-size: 120%;
+    font-weight: 100;
+  }
+
+  // layout
+  position: fixed;
+  width: 100%;
+  left: auto;
+  right: auto;
+  z-index: 1;
+
+  height: $navbar-height;
+  @include flex-row-container();
+  justify-content: center;
+  .item, .spacer {
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+  .fixed-spacer {
+    @include flex-fixed();
+  }
+  .item {
+    @include flex-fixed();
+    padding: 0 ($item-padding/2);
+    &:first-child {
+      padding-left: $item-padding;
+    }
+    &:last-child {
+      padding-right: $item-padding;
+    }
+    &:hover {
+      background-color: rgba(black, 0.025);
+    }
+    &:active {
+      background-color: rgba(black, 0.05);
+    }
+  }
+  .spacer {
+    @include flex-fluid();
+  }
+  width: 100%;
+}

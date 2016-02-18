@@ -1,0 +1,22 @@
+---
+title: Ge Yang
+layout: blog
+---
+
+{% include full-width-image-begin.html height="400px" src="https://cdn-images-1.medium.com/fit/t/1200/960/gradv/29/81/55/1*qUF3hZQFAFtqyYO1pRS0Tw.png" %}
+<h1>What's Up with Ge?</h1>
+<h2>A simple blog about what Ge is up to</h2>
+{% include full-width-image-end.html %}
+
+<div class="post-list-container">
+    {% for post in site.posts limit:20000 %}
+    <article class="post-card-view"><a href="{{ BASE_PATH }}{{ post.url }}">
+        {% if post.snippet %}
+            {% include full-width-image.html height=post.snippetHeight src=post.snippet %}
+        {% endif %}
+        <h2>{{post.title}}</h2>
+        {{ post.excerpt }}
+        <div class="hint">{{post.category}} {{post.tags}} {{ post.date | date_to_string }}</div>
+    </a></article>
+    {% endfor %}
+</div>
