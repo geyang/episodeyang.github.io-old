@@ -60,5 +60,8 @@
     p, .paragraph {
       margin-bottom: 1em;
     }
+    .image + p, .image + .paragraph {
+      margin-top: 0.5em;
+    }
   }
 }

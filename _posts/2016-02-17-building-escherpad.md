@@ -1,14 +1,17 @@
 ---
-title: Building Escherpad
-excerpt: <h3></h3>
+title: Taking Beautiful Math Notes To Your Browser
 mathJax: true
+snippet: /projects/escherpad/escherpad-home-page-screen-shot.png
+snippetHeight: 200px
+snippetPosition: top
+excerpt: <p>Launching Escherpad And Design Fine-tunning</p>
 ---
 
-# First Level Heading 
+{% include full-width-image.html position="top" height="450px" src="/projects/escherpad/escherpad-home-page-screen-shot-wide.png" %}
 
 `h1` heading is the first level heading. Usually it is best to have only one top-level
 heading per page. This is also recommended by Google in their SEO manual.
-<!-- more -->
+<!-- end excerpt -->
 
 Inline math is working \\( \alpha + beta + \sqrt{1 + 2} \\) 
 

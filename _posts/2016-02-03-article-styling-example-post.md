@@ -1,16 +1,12 @@
 ---
 title: Test Post
 mathJax: true
-snippet: https://cdn-images-1.medium.com/fit/t/1200/960/gradv/29/81/55/1*qUF3hZQFAFtqyYO1pRS0Tw.png
+snippet: /projects/escherpad/escherpad-home-page-screen-shot-wide.png
 snippetHeight: 200px
-excerpt: 
-    <p>Excerpt text</p>
+excerpt: <p>Excerpt text</p>
 ---
 
-{% include full-width-image-begin.html height="400px" src="https://cdn-images-1.medium.com/fit/t/1200/960/gradv/29/81/55/1*qUF3hZQFAFtqyYO1pRS0Tw.png" %}
- <h1> Hero Image Heading </h1>
- <h2> sub title goes right here </h2>
-{% include full-width-image-end.html %}
+{% include full-width-image.html position="top" height="450px" src="/projects/escherpad/escherpad-home-page-screen-shot-wide.png" %}
 
 `h1` heading is the first level heading. Usually it is best to have only one top-level
 heading per page. This is also recommended by Google in their SEO manual.
