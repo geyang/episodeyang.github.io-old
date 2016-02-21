@@ -102,7 +102,7 @@ body.page-container {
   font-family: 'Gotham', sans-serif;
 
   // layout
-  position: relative;
+  position: absolute;
   height: 100%; // needed for firefox to determine child element height correctly.
   width: 100%;
   @include touch-scroll(y);
