@@ -20,9 +20,9 @@ Challenge
 Live
 : [www.escherpad.com](http://www.escherpad.com)
 
-Escherpad is a real-time collaborative notebook for developer, scientists, mathematicians and data scientists. It is similar to Evernote meeting Google Docs, plus in-browser LaTeX WYSIWYG editing, and IPython/Jupyter and R computation notebooks. 
+Escherpad is a real-time collaborative notebook for developers, scientists and data analysts. It is similar to Evernote meeting Google Docs, plus in-browser LaTeX WYSIWYG editing, and IPython/Jupyter and R computation notebooks. 
 
-Escherpad is a large project. The client is an Angular1 project with more than 200 files, and the back-end is a conflict-resolving real-time collaborative API written in node.js. All of the API end points come with BDD tests. At the end of the project, I had roughly 200 tests for the API server. These tests allowed me to iterate quickly, and not worry about breaking code that is already there.
+Escherpad is a large project. The client is an Angular1 project with more than 200 files, and the back-end is a conflict-resolving real-time collaborative API written in node.js. All of the API end points come with behavioral specifications. At the end of the project, I had roughly 200 tests for the API server. These tests allowed me to iterate quickly, and not worry about breaking code that is already there.
 
 ## Design
 
