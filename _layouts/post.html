@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
 <head>
-    <title>{{page.title}}</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0001, maximum-scale=1.0001">
     <link href="/posts/index.css" rel="stylesheet">
-    {% include google-analytics.html %}
     <script src="/posts/index.js"></script>
+    <link rel="stylesheet" href="/posts/syntax.css" type="text/css"/>
     {% if page.mathJax %}
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
             type="text/javascript"></script>
     {% endif %}
-    <link rel="stylesheet" href="/posts/syntax.css" type="text/css"/>
-
 </head>
 <body class="page-container">
-    {% include navbar.html %}
+{% include navbar.html %}
 <div class="post-content {{page.postLayout}}">{{content}}</div>
 <div class="recommendation-footer"></div>
+
+<!--other scripts loaded after the content-->
 </body>
-</html>
