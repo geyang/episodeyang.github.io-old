@@ -2,17 +2,17 @@
 <html lang="en">
     <head>
         <title>{{page.title}}</title>
-        <meta name="description" content="{{page.summary || page.excerpt}}"/>
+        <meta name="description" content="{{page.excerpt}}"/>
 
         <!-- Twitter Card data -->
-        <meta name="twitter:card" value="{{page.summary || page.excerpt}}">
+        <meta name="twitter:card" value="{{page.excerpt}}">
 
         <!-- Open Graph data -->
         <meta property="og:title" content="{{page.title}}"/>
         <meta property="og:type" content="article"/>
         <meta property="og:url" content="http://www.episodeyang.com/"/>
         <meta property="og:image" content="http://www.episodeyang.com{{page.snippet}}"/>
-        <meta property="og:description" content="{{page.summary || page.excerpt}}"/>
+        <meta property="og:description" content="{{page.excerpt}}"/>
         {% include google-analytics.html %}
     </head>
     {{ content }}
