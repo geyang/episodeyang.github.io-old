@@ -119,6 +119,11 @@ $page-width: 900px;
 }
 
 @import "navbar.scss";
+.fixed-navbar {
+  > * {
+    top: -40px;
+  }
+}
 
 .fixed-hero {
   // styles

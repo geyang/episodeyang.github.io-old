@@ -43,8 +43,6 @@ function app() {
         return scrollHandler;
     }
 
-    onScroll(body)();
-    
     document.addEventListener('scroll', onScroll(body));
 
     if (isMobileSafari()) {
