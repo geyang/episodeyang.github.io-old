@@ -62,7 +62,8 @@
 @mixin article ($selector, $width) {
   #{$selector} {
     // typesetting
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;;
+    font-family: Cambria, 'Gotham', sans-serif;
+    //font-family: Georgia, Cambria, "Times New Roman", Times, serif;;
     font-weight: 400;
     font-style: normal;
     line-height: 1.58;

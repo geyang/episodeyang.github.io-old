@@ -57,3 +57,20 @@ $sm-bp: 1000px;
 @media (min-width: $sm-bp) {
   @include article-layout-grid(3, '.post-content', $sm-bp*0.9, 30px);
 }
+
+.footer {
+  font-family: 'Gotham', sans-serif;
+  font-size: 13px;
+  height: 70px;
+  background-color: #f4f4f4;
+  margin: 0;
+  margin-top: 50px;
+  width: 100%;
+  color: #555;
+  @include flex-column-container();
+  align-items: center;
+  justify-content: center;
+  > * {
+    @include flex-fixed();
+  }
+}

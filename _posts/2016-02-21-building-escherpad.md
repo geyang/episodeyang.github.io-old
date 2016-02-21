@@ -54,9 +54,9 @@ As a result, I ended up re-designing the list view removing the content excerpt.
 
 ## Development
 
-### A Schema Agnostic, Conflict Resolving Real-time Collaborative Backend
+### A Schema-Agnostic, Conflict Resolving Real-time Collaborative Backend
 
-The node.js backend for Escherpad is a schema agnostic real-time collaborative server. The core conflict-resolving synchronization engine is implemented based on a modified version of Google Neil Fraser’s diff­match­patch algorithm. 
+The real-time collaborative backend is written in node.js. I implemented the core conflict-resolving synchronization engine based on a modified version of Google Neil Fraser’s diff­match­patch algorithm. To allow playback of the entire editing history of a document, I modified the original algorithm so that the shadow copies are not exclusive to each client-server session but instead shared in a global rebase graph.
 
 <iframe class="float float-left" width="560" height="315" src="https://www.youtube.com/embed/si0QFaDStoo" frameborder="0" allowfullscreen></iframe>
 
@@ -66,7 +66,7 @@ The second reason to go with diff-sync is that it can handle arbitrary JSON data
  
 In the end, my effort was successful, and the final version has been in production for 12 month. The flexibility of this API allowed me to quickly implement a RTC IPython notebook despite of the fact that the IPython Notebook format is a nested json­document with many complicated operations.
 
-### Designing a Scalable Real-time Server Architecture
+### Designing a Scalable RTC Server Architecture
 
 Being a naive graduate student I wanted to make sure that when Escherpad make it to HackerNews, my server(s) can handle the heavy load. What makes real-time collaborative server hard to scale is that the algorithms are stateful. Each session have to be saved somewhere in memory.
 
@@ -80,10 +80,11 @@ Since this is the first iteration, room membership is not cached locally but req
 
 This made me very happy:)
 
-## Marketing, And Many More...
+## Launch, Rinse, Repeat
 
-There is a lot to be said about Escherpad. Since it is getting late and this post is getting long, I will leave those stories to another post. 
+There is a lot more to be said about Escherpad. Since it is getting late and this post is getting long, I will leave those stories to another post. 
 
 See you next time!
 
 
+{% include post-footer.html %}
