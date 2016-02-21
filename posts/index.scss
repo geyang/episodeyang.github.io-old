@@ -45,18 +45,15 @@ $page-width: 900px;
 //  box-sizing: border-box;
 //  padding-right: 15px;
 //}
-iframe.float-left {
-  margin-bottom: 10px;
-}
 
 $xs-bp: 680px;
 $sm-bp: 1000px;
 @media (max-width: ($xs-bp - 1px)) {
-  @include article-layout-1-column('.post-content', 85%);
+  @include article-layout-1-column('.post-content', 85%, 30px);
 }
 @media (min-width: $xs-bp) and (max-width: ($sm-bp - 1px)) {
-  @include article-layout-grid(3, '.post-content', 85%, 20px);
+  @include article-layout-grid(3, '.post-content', 85%, 30px);
 }
 @media (min-width: $sm-bp) {
-  @include article-layout-grid(3, '.post-content', $sm-bp*0.9, 20px);
+  @include article-layout-grid(3, '.post-content', $sm-bp*0.9, 30px);
 }

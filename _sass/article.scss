@@ -14,10 +14,13 @@
     }
   }
 }
-@mixin article-layout-1-column ($selector, $width) {
+@mixin article-layout-1-column ($selector, $width, $float-padding) {
     #{$selector} {
       > *:not(.full-width-block) {
         width: $width;
+      }
+      .float {
+        margin-bottom: $float-padding;
       }
     }
 }
@@ -33,6 +36,7 @@
     }
     .float {
       position: relative;
+      margin-bottom: $float-padding;
     }
     .float.float-left {
       float: left;
