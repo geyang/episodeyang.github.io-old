@@ -49,8 +49,12 @@ iframe.float-left {
   margin-bottom: 10px;
 }
 
+$xs-bp: 680px;
 $sm-bp: 1000px;
-@media (max-width: ($sm-bp - 1px)) {
+@media (max-width: ($xs-bp - 1px)) {
+  @include article-layout-1-column('.post-content', 85%);
+}
+@media (min-width: $xs-bp) and (max-width: ($sm-bp - 1px)) {
   @include article-layout-grid(3, '.post-content', 85%, 20px);
 }
 @media (min-width: $sm-bp) {
