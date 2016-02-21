@@ -4,7 +4,7 @@ mathJax: true
 snippet: /projects/escherpad/escherpad-home-page-screen-shot.png
 snippetHeight: 200px
 snippetPosition: top
-excerpt: <p>Launching Escherpad And Design Fine-tunning</p>
+excerpt: <p>My story of building a real-time collaborative notebook for developers and data analysts. Escherpad is a large project.</p>
 postLayout: "layout-3-column offset-1-column"
 ---
 
