@@ -74,7 +74,7 @@ Being a naive graduate student I wanted to make sure that when Escherpad make it
 ![escherpad real-time server architecture](/projects/escherpad/escherpad-real-time-server-architecture-Screenshot_2016-02-20.png)
 </div>
 
-At this point and time I was already using RabbitMQ for the LaTeX compiling and some of the folder sharing operations that requires walking down a deep tree. RabbitMQ's performance in handling messages is extremely impressive as shown by multiple benchmarking experiments. So it was a no-brainer that I was going to build the scalable architecture on RabbitMQ. Long story short, my library roomify creates a stateful abstraction for each document. Messages are then routed inside the cluster by RabbitMQ using a direct exchange. 
+At this point and time I was already using RabbitMQ for the LaTeX compiling and some of the folder sharing operations that requires walking down a deep tree. RabbitMQ's performance in handling messages is extremely impressive as shown by multiple benchmarking experiments. So it was a no-brainer that I was going to build the scalable architecture on RabbitMQ. Long story short, my library roomify creates a stateful chat room abstraction for each document. Messages are then routed inside the cluster by RabbitMQ using a direct exchange. 
 
 Since this is the first iteration, room membership is not cached locally but requested on each message from the database. A mongo index is created to make sure that these requests are in-memory and never hit the hard drive. A benchmark test on a EC2 instance shows that even with a sub optimal network configuration where the database is not co-located with the api server with a large delay of 100 ms, a single EC2 instance is able to handle up to 4000 requests per second. 
 
