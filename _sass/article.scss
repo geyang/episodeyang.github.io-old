@@ -1,26 +1,61 @@
 // Created by ge on 2/16/16.
 @import "full-width";
-
 @import "mixins/layouts";
-@mixin article ($selector, $width) {
-  $sm-bp: ($width / 0.9);
-  @media (max-width: ($sm-bp - 1px) ) {
-    #{$selector} {
-      font-size: 21px;
-      > *:not(.full-width-block) {
-        width: 90%;
-      }
+
+@mixin article-layout-base ($selector) {
+  #{$selector} {
+    position: relative;
+    //@include flex-column-container();
+    align-items: center;
+    > * {
+      //@include flex-fixed();
+      margin-left: auto;
+      margin-right: auto;
     }
   }
-  @media (min-width: $sm-bp) {
+}
+@mixin article-layout-1-column ($selector, $width) {
     #{$selector} {
-      font-size: 21px;
       > *:not(.full-width-block) {
         width: $width;
       }
     }
-  }
+}
+@mixin width($width, $column-number, $width-column) {
+  width: $width/$column-number*$width-column;
+};
+@mixin article-layout-grid ($column-number, $selector, $width, $float-padding) {
+  #{$selector}.layout-#{$column-number}-column {
+    box-sizing: border-box;
+    > *:not(.full-width-block):not(.float) {
+      width: $width;
+      box-sizing: border-box;
+    }
+    .float {
+      position: relative;
+    }
+    .float.float-left {
+      float: left;
+      left: calc(50% - #{$width/2} - #{$float-padding});
+      margin-right: calc(50% - #{$width/2} );
+    }
+    @for $i from 1 through $column-number {
+      .float-#{$i}-column {
+        @include width($width, $column-number, $i);
+      }
+    }
 
+  }
+  #{$selector}.layout-3-column.offset-1-column {
+    > *:not(.full-width-block):not(.float) {
+      padding-left: $width/3;
+    }
+    .float.float-left {
+    }
+  }
+}
+
+@mixin article ($selector, $width) {
   #{$selector} {
     // typesetting
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;;
@@ -31,37 +66,65 @@
 
     // style
     color: rgba(black, 0.8);
-
-
-    position: relative;
-    @include flex-column-container();
-    align-items: center;
-    > * {
-      @include flex-fixed();
-    }
     h1 {
-      font-size: 200%;
+      font-size: 300%;
       font-weight: 500;
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
     h2 {
-      font-size: 150%;
-      font-weight: 400;
+      font-family: 'Gotham', sans-serif;
+      font-size: 225%;
+      font-weight: 700;
       margin-top: 1em;
-      margin-bottom: 0.5em;
+    }
+    h2 + h3 {
+      margin-top: 0em;
+    }
+    h2 + p {
+      margin-top: 1em;
     }
     h3 {
-      font-size: 130%;
-      font-weight: 300;
+      color: rgba(black, 0.44);
+      font-family: 'Gotham', sans-serif;
+      font-size: 170%;
+      font-weight: 200;
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
     p, .paragraph {
       margin-bottom: 1em;
     }
-    .image + p, .image + .paragraph {
-      margin-top: 0.5em;
+    .image {
+      margin-bottom: 2em;
+    }
+    // inline stylings
+    em {
+      font-style: italic;
+    }
+    code {
+      font-family: Consolas;
+      font-size: 90%;
+      color: #355e75;
+      background-color: #eee;
+      border: solid 1px #ccc;
+      border-radius: 3px;
+      padding: 3px 5px 0px;
+    }
+    //.image + p, .image + .paragraph, .image + h1, .image + h2, .image + h3, .image + dl {
+    //  margin-top: 2em;
+    //}
+
+    dl {
+      dt {
+        color: #ccc;
+      }
+      dd {
+        color: #666;
+      }
+    }
+    .float img {
+      width: 100%;
     }
   }
 }

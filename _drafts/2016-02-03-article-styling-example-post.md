@@ -32,8 +32,6 @@ for i in range(10):
 
 this is pretty amazing, isn't it?
 
-{% include full-width-image.html height="400px" src="https://cdn-images-1.medium.com/fit/t/1200/960/gradv/29/81/55/1*qUF3hZQFAFtqyYO1pRS0Tw.png" %}
-
 now we have some text
 and you can add even more text. everything is going to be fine.
 What do you think of this? \\( \alpha + \beta \\) and this is the default deliminator. This simpliy just works

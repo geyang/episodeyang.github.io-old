@@ -16,5 +16,12 @@ npm start # this kick starts the jekyll server
 npm run watch # this kick starts the browserSync proxy server, and watches the `_site` folder for updated output files.
 ```
 
+## 3. To test for github page production mode
+
+run
+```shell
+jekyll build --safe
+```
+
 ### Notes on performance:
 With the `node_module` and other library folders excluded, the jekyll watch should be very speedy.

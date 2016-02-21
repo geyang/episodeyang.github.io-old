@@ -39,3 +39,20 @@ $page-width: 900px;
 }
 @import "article.scss";
 @include article('.post-content', 700px);
+@include article-layout-base('.post-content');
+
+//dl.float.float-left {
+//  box-sizing: border-box;
+//  padding-right: 15px;
+//}
+iframe.float-left {
+  margin-bottom: 10px;
+}
+
+$sm-bp: 1000px;
+@media (max-width: ($sm-bp - 1px)) {
+  @include article-layout-grid(3, '.post-content', 85%, 20px);
+}
+@media (min-width: $sm-bp) {
+  @include article-layout-grid(3, '.post-content', $sm-bp*0.9, 20px);
+}
