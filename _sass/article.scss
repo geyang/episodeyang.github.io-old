@@ -40,6 +40,8 @@
     }
     .float.float-left {
       float: left;
+    }
+    > .float.float-left {
       left: calc(50% - #{$width/2} - #{$float-padding});
       margin-right: calc(50% - #{$width/2} );
     }
@@ -50,11 +52,20 @@
     }
 
   }
-  #{$selector}.layout-3-column.offset-1-column {
-    > *:not(.full-width-block):not(.float) {
-      padding-left: $width/3;
-    }
-    .float.float-left {
+  @for $i from 1 through $column-number {
+    $text-column-width: $column-number - $i;
+    #{$selector}.layout-#{$column-number}-column.offset-#{$i}-column {
+      > *:not(.full-width-block):not(.float) {
+        padding-left: $width/$column-number*$i;
+      }
+      @for $j from 1 through $column-number {
+        $float-width: percentage($j/$text-column-width);
+        > * > .float.float-left.float-#{$j}-column {
+          width: $float-width;
+          left: calc( -#{$float-width} - #{$float-padding});
+          margin-right: -$float-width;
+        }
+      }
     }
   }
 }
@@ -134,6 +145,13 @@
     iframe {
       // iframe is inline by default per the html4 specification
       display: block;
+    }
+    figcaption{
+      font-size: 90%;
+      color: #333;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 15px;
     }
   }
 }

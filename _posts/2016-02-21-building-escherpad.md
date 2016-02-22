@@ -5,7 +5,7 @@ snippet: /projects/escherpad/escherpad-home-page-screen-shot.png
 snippetHeight: 200px
 snippetPosition: top
 excerpt: <p>My story of building a real-time collaborative notebook for developers and data analysts. Escherpad is a large project.</p>
-postLayout: "layout-3-column offset-1-column"
+postLayout: "layout-6-column offset-2-column"
 ---
 
 {% include full-width-image.html position="top" height="450px" border-bottom="solid 1px #ccc" src="/projects/escherpad/escherpad-home-page-screen-shot.png" %}
@@ -70,13 +70,20 @@ In the end, my effort was successful, and the final version has been in producti
 
 Being a naive graduate student I wanted to make sure that when Escherpad make it to HackerNews, my server(s) can handle the heavy load. What makes real-time collaborative server hard to scale is that the algorithms are stateful. Each session have to be saved somewhere in memory.
 
-<div markdown="span" class="float float-left float-2-column">
+<figure markdown="span" class="float float-left float-4-column">
 ![escherpad real-time server architecture](/projects/escherpad/escherpad-real-time-server-architecture-Screenshot_2016-02-20.png)
-</div>
+</figure>
 
 At this point and time I was already using RabbitMQ for the LaTeX compiling and some of the folder sharing operations that requires walking down a deep tree. RabbitMQ's performance in handling messages is extremely impressive as shown by multiple benchmarking experiments. So it was a no-brainer that I was going to build the scalable architecture on RabbitMQ. Long story short, my library roomify creates a stateful chat room abstraction for each document. Messages are then routed inside the cluster by RabbitMQ using a direct exchange. 
 
-Since this is the first iteration, room membership is not cached locally but requested on each message from the database. A mongo index is created to make sure that these requests are in-memory and never hit the hard drive. A benchmark test on a EC2 instance shows that even with a sub optimal network configuration where the database is not co-located with the api server with a large delay of 100 ms, a single EC2 instance is able to handle up to 4000 requests per second. 
+<div class="paragraph"> Since this is the first iteration, room membership is not cached locally but requested on each message from the database. 
+    <figure class="float float-left float-2-column">
+    <img alt="escherpad roomify load test single instance" src="/projects/escherpad/roomify-load-test-single-process-screenshot_2015-05-13-10.33.01.png">
+    <figcaption>message rate with a single process</figcaption>
+    <img alt="escherpad roomify load test single instance" src="/projects/escherpad/roomify-load-test-16-processes-screenshot_2015-05-13-10.36.03.png">
+    <figcaption>message rate with 16 processes on a single core EC2</figcaption>
+    </figure>A mongoDB index is created to make sure that these requests are in-memory and never hit the hard drive. A benchmark test on a EC2 instance shows that even with a sub optimal network configuration where the database is not co-located with the api server with a large delay of 100 ms, a single EC2 instance is able to handle up to 4000 requests per second. 
+</div>
 
 This made me very happy:)
 
