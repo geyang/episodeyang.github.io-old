@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <title>{{page.title}}</title>
-        <meta name="description" content="{{page.excerpt}}"/>
+        <meta name="description" content="{{page.excerpt | strip_html}}"/>
 
         <!-- Twitter Card data -->
         <meta name="twitter:card" value="http://www.episodeyang.com{{page.snippet}}">
         <meta name="twitter:site" content="@episodeyang">
         <meta name="twitter:title" content="{{page.title}}">
-        <meta name="twitter:description" content="{{page.excerpt}}">
+        <meta name="twitter:description" content="{{page.excerpt | strip_html}}">
         <meta name="twitter:creator" content="@episodeyang">
         <!-- Twitter summary card with large image must be at least 280x150px -->
         <meta name="twitter:image:src" content="http://www.episodeyang.com{{page.snippet}}">
@@ -18,7 +18,7 @@
         <meta property="og:type" content="article"/>
         <meta property="og:url" content="http://www.episodeyang.com{{page.url}}"/>
         <meta property="og:image" content="http://www.episodeyang.com{{page.snippet}}"/>
-        <meta property="og:description" content="{{page.excerpt}}"/>
+        <meta property="og:description" content="{{page.excerpt | strip_html}}"/>
         {% include google-analytics.html %}
     </head>
     {{ content }}
