@@ -83,7 +83,7 @@ At this point and time I was already using RabbitMQ for the LaTeX compiling and 
     <img alt="escherpad roomify load test single instance" src="/projects/escherpad/roomify-load-test-16-processes-screenshot_2015-05-13-10.36.03.png">
     <figcaption>message rate with 16 processes on a single core EC2</figcaption>
 </figure>
-Since this is the first iteration, room membership is not cached locally but requested on each message from the database. A mongoDB index is created to make sure that these requests are in-memory and never hit the hard drive. A benchmark test on an EC2 instance shows that even with a sub optimal network configuration where the database is not co-located with the api server with a large delay of 100 ms, a single EC2 instance is able to handle up to 2500 requests per second with 1 process. This number goes up to 4000 rps when you run a few redundancy processes, a common practice in production in case one process halts on an exception.
+Since this is the first iteration, room membership is not cached locally but requested on each message from the database. A mongoDB index is created to make sure that these requests are in-memory and never hit the hard drive. A benchmark test on an EC2 instance shows that even with a sub optimal network configuration where the database is not co-located with the api server with a large delay of 20 ms, a single EC2 instance is able to handle up to 2500 requests per second with 1 process. This number goes up to 4000 rps when you run a few redundancy processes, a common practice in production in case one process halts on an exception.
 </div>
 
 This made me very happy:)
