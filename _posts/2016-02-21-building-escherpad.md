@@ -32,7 +32,7 @@ From the very beginning of Escherpad, I wanted to make it super easy to search f
 
 ### Iterating Based on User's Feedback
 
-During the pre-Beta and private Beta, I iterated like crazy based on what the users' feedbacks. In one case, I asked Shaan for comments on the app. He mentioned that the text excerpt in the list view are not very useful and he never pays any attention to them. 
+During the pre-Beta and private Beta, I iterated like crazy based on the users' feedbacks. In one case, I asked Shaan for comments on the app. He mentioned that the text excerpt in the list view are not very useful and he never pays any attention to them. 
 
 {% include full-width-image.html position="top" height="450px" border-bottom="solid 1px #ccc" src="/projects/escherpad/escherpad-design-v1-Screenshot_2014-11-09.png" %}
 
