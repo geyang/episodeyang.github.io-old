@@ -14,6 +14,20 @@ $item-padding: 12px;
   background-color: white;
   .item {
     font-weight: 100;
+    img {
+      // style
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      // layout
+      $top-padding: $navbar-height * 0.38;
+      $bottom-padding: $navbar-height * 0.35;
+      margin-top: $top-padding;
+      margin-bottom: $bottom-padding;
+      height: $navbar-height - ($top-padding + $bottom-padding);
+    }
   }
   .item.emphasis {
     font-size: 120%;
