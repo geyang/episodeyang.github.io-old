@@ -37,6 +37,6 @@
     "browser-sync": "^2.11.1"
   },
   "dependencies": {
-    "lodash.throttle": "^4.0.1",
+    "lodash.throttle": "^4.0.1"
   }
 }
