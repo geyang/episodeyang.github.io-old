@@ -14,7 +14,7 @@ $sm-w: ($sm-h * 1.25);
 $md-h: 855px;
 $md-w: ($md-h * 1.25);
 .fixed-hero {
-  //transition: all 0.08s linear;
+  //transition: top 0.001s linear;
   .header-box, h1, p {
     transition: all 0.3s linear;
   }

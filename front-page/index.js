@@ -1,4 +1,5 @@
 /** Created by ge on 2/13/16. */
+var throttle = require('lodash.throttle');
 
 document.addEventListener("DOMContentLoaded", function (event) {
     console.log("DOM fully loaded and parsed");
@@ -27,8 +28,8 @@ function app() {
             var navbarTop = Math.max(
                 -100,
                 -400 * (1 - Math.max(
-                    0,
-                    (Math.min(1, scrollProgress + 0.2)))
+                        0,
+                        (Math.min(1, scrollProgress + 0.2)))
                 )
             );
             navbarContent.setAttribute('style', "top: " + navbarTop.toString().slice(0, 6) + "px;");
@@ -40,7 +41,7 @@ function app() {
             arrow.className = "fixed-hero-shadow";
         }
 
-        return scrollHandler;
+        return throttle(scrollHandler, 17, {rising: true});
     }
 
     document.addEventListener('scroll', onScroll(body));
