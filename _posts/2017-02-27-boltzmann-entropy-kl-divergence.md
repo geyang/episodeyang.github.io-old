@@ -4,7 +4,7 @@ mathJax: true
 snippet: /projects/machine-learning/boltzmann/boltz.jpg
 snippetHeight: 200px
 snippetPosition: top
-excerpt: <p>How to go from Statistical Mechanics to Kullback-Leibler Divergence</p>
+excerpt: <p>How to go from Statistical Mechanics to Kullback-Leibler Divergence, a Physicist's Approach</p>
 postLayout: "layout-12-column offset-4-column"
 ---
 
@@ -73,7 +73,7 @@ ratio has to be identical
 \end{align}
 This, is the statistical mechanics' definition of *temperature*.
 
-#### Entropy
+#### Shannon's Entropy
 
 For two microstates $1$ and $2$, the relative probability is
 \begin{align}
