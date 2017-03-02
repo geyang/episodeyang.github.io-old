@@ -2,7 +2,7 @@
 @import "full-width";
 @import "mixins/layouts";
 
-@mixin article-layout-base ($selector) {
+@mixin article-layout-base($selector) {
   #{$selector} {
     position: relative;
     //@include flex-column-container();
@@ -14,36 +14,46 @@
     }
   }
 }
-@mixin article-layout-1-column ($selector, $width, $float-padding) {
-    #{$selector} {
-      > *:not(.full-width-block) {
-        width: $width;
-      }
-      .float {
-        margin-bottom: $float-padding;
-      }
+
+@mixin article-layout-1-column($selector, $width, $float-padding) {
+  #{$selector} {
+    > *:not(.full-width-block) {
+      width: $width;
     }
+    .float {
+      margin-bottom: $float-padding;
+    }
+  }
 }
+
 @mixin width($width, $column-number, $width-column) {
   width: $width/$column-number*$width-column;
-};
-@mixin article-layout-grid ($column-number, $selector, $width, $float-padding) {
+}
+
+@mixin article-layout-grid($column-number, $selector, $width, $float-padding) {
   #{$selector}.layout-#{$column-number}-column {
     box-sizing: border-box;
     > *:not(.full-width-block):not(.float) {
-      width: $width;
       box-sizing: border-box;
+      width: $width;
     }
     .float {
-      position: relative;
       margin-bottom: $float-padding;
+      position: relative;
     }
     .float.float-left {
       float: left;
     }
+    .float.float-right {
+      float: right;
+    }
+    > .float.float-right {
+      margin-left: calc(50% - #{$width/2});
+      right: calc(50% - #{$width/2} - #{$float-padding});
+    }
     > .float.float-left {
       left: calc(50% - #{$width/2} - #{$float-padding});
-      margin-right: calc(50% - #{$width/2} );
+      margin-right: calc(50% - #{$width/2});
     }
     @for $i from 1 through $column-number {
       .float-#{$i}-column {
@@ -62,7 +72,7 @@
         $float-width: percentage($j/$text-column-width);
         > * > .float.float-left.float-#{$j}-column {
           width: $float-width;
-          left: calc( -#{$float-width} - #{$float-padding});
+          left: calc(-#{$float-width} - #{$float-padding});
           margin-right: -$float-width;
         }
       }
@@ -70,7 +80,7 @@
   }
 }
 
-@mixin article ($selector, $width) {
+@mixin article($selector, $width) {
   #{$selector} {
     // typesetting
     font-family: Cambria, 'Gotham', sans-serif;
@@ -105,11 +115,30 @@
       font-family: 'Gotham', sans-serif;
       font-size: 170%;
       font-weight: 200;
-      margin-top: 1em;
       margin-bottom: 0.5em;
+      margin-top: 1em;
+    }
+    h4 {
+      color: #1a1a1a;
+      font-family: 'Gotham', sans-serif;
+      font-size: 140%;
+      font-weight: 900;
+      margin-bottom: 0.25em;
+      margin-top: 0.5em;
     }
     p, .paragraph {
       margin-bottom: 1em;
+    }
+    blockquote {
+      border-right: 10px solid #eeeeee;
+      color: #848484;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+      p:last-child {
+        margin-bottom: 0
+      }
     }
     .image {
       margin-bottom: 2em;
@@ -117,6 +146,9 @@
     // inline stylings
     em {
       font-style: italic;
+    }
+    strong {
+      font-weight: 900;
     }
     code {
       font-family: Consolas;
@@ -131,6 +163,10 @@
     //  margin-top: 2em;
     //}
 
+    ul, ol {
+      list-style: initial;
+      margin-bottom: 1em;
+    }
     dl {
       dt {
         color: #ccc;
@@ -146,7 +182,7 @@
       // iframe is inline by default per the html4 specification
       display: block;
     }
-    figcaption{
+    figcaption {
       font-size: 90%;
       color: #333;
       text-align: center;

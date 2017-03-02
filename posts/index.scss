@@ -52,10 +52,10 @@ $sm-bp: 1000px;
   @include article-layout-1-column('.post-content', 85%, 30px);
 }
 @media (min-width: $xs-bp) and (max-width: ($sm-bp - 1px)) {
-  @include article-layout-grid(6, '.post-content', 85%, 30px);
+  @include article-layout-grid(12, '.post-content', 85%, 30px);
 }
 @media (min-width: $sm-bp) {
-  @include article-layout-grid(6, '.post-content', $sm-bp*0.9, 30px);
+  @include article-layout-grid(12, '.post-content', $sm-bp*0.9, 30px);
 }
 
 .footer {

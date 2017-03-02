@@ -9,7 +9,7 @@ layout: blog
 {% include full-width-image-end.html %}
 
 <div class="post-list-container">
-    {% for post in site.posts limit:20000 %}
+    {% for post in site.posts limit:100 %}
     <article class="post-card-view"><a href="{{ BASE_PATH }}{{ post.url }}">
         {% if post.snippet %}
         {% include full-width-image.html position=post.snippetPosition height=post.snippetHeight src=post.snippet %}

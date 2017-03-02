@@ -2,13 +2,52 @@
 layout: default
 ---
 <head>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0001, maximum-scale=1.0001">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0001, maximum-scale=1.0001">
     <link href="/posts/index.css" rel="stylesheet">
     <script src="/posts/index.js"></script>
     <link rel="stylesheet" href="/posts/syntax.css" type="text/css"/>
     {% if page.mathJax %}
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
             type="text/javascript"></script>
+    <script>
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            //jax: ["input/TeX", "output/SVG"],
+            //jax: ["input/TeX", "output/HTML-CSS"],
+            jax: ["input/TeX", "output/CommonHTML"],
+            showMathMenu: false,
+            showMathMenuMSIE: false,
+            tex2jax: {
+                inlineMath: [["$", "$"]],
+                displayMath: [["$$", "$$"]],
+                processEscapes: true
+            },
+            TeX: {
+                equationNumbers: {autoNumber: "AMS"},
+                extensions: ['AMSmath.js', 'AMSsymbols.js']
+            },
+            "CommonHTML": {
+                linebreaks: {
+                    automatic: true,
+                    width: '900px'
+                }
+            },
+            "HTML-CSS": {
+                preferredFont: "STIX",
+                matchFontHeight: true,
+                linebreaks: {
+                    automatic: true,
+                    width: '900px'
+                },
+                availableFonts: ["TeX", "STIX"]
+            },
+            "CHTML-preview": {
+                disabled: true
+            }
+        });
+        MathJax.Hub.Configured();
+    </script>
     {% endif %}
 </head>
 <body class="page-container">

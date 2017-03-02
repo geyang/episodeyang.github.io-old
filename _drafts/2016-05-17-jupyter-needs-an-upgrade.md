@@ -5,12 +5,12 @@ snippet: /projects/escherpad/escherpad-home-page-screen-shot.png
 snippetHeight: 200px
 snippetPosition: top
 excerpt: <p>My story of building a real-time collaborative notebook for developers and data analysts. Escherpad is a large project.</p>
-postLayout: "layout-12-column offset-2-column"
+postLayout: "layout-6-column offset-2-column"
 ---
 
 {% include full-width-image.html position="top" height="450px" border-bottom="solid 1px #ccc" src="/projects/escherpad/escherpad-home-page-screen-shot.png" %}
 
-{: .float .float-left .float-2-column }
+{: .float .float-left .float-1-column }
 Project
 : Escherpad
 
@@ -36,7 +36,7 @@ During the pre-Beta and private Beta, I iterated like crazy based on the users' 
 
 {% include full-width-image.html position="top" height="450px" border-bottom="solid 1px #ccc" src="/projects/escherpad/escherpad-design-v1-Screenshot_2014-11-09.png" %}
 
-<!--<div markdown="span" class="float float-left float-4-column">-->
+<!--<div markdown="span" class="float float-left float-2-column">-->
 <!--![escherpad real-time server architecture](/projects/escherpad/escherpad-design-v1-Screenshot_2014-11-09.png)-->
 <!--</div>-->
 
@@ -68,7 +68,7 @@ In the end, my effort was successful, and the final version has been in producti
 
 ### Designing a Scalable RTC Server Architecture
 
-<figure class="float float-left float-6-column">
+<figure class="float float-left float-3-column">
     <img alt="escherpad real-time server architecture" src="/projects/escherpad/escherpad-real-time-server-architecture-Screenshot_2016-02-20.png">
 </figure>
 
@@ -77,7 +77,7 @@ Being a naive graduate student I wanted to make sure that when Escherpad make it
 At this point and time I was already using RabbitMQ for the LaTeX compiling and some of the folder sharing operations that requires walking down a deep tree. RabbitMQ's performance in handling messages is extremely impressive as shown by multiple benchmarking experiments. So it was a no-brainer that I was going to build the scalable architecture on RabbitMQ. Long story short, my library roomify creates a stateful chat room abstraction for each document. Messages are then routed inside the cluster by RabbitMQ using a direct exchange. 
 
 <div class="paragraph">
-<figure class="float float-left float-4-column">
+<figure class="float float-left float-2-column">
     <img alt="escherpad roomify load test single instance" src="/projects/escherpad/roomify-load-test-single-process-screenshot_2015-05-13-10.33.01.png">
     <figcaption>message rate with a single process</figcaption>
     <img alt="escherpad roomify load test single instance" src="/projects/escherpad/roomify-load-test-16-processes-screenshot_2015-05-13-10.36.03.png">
