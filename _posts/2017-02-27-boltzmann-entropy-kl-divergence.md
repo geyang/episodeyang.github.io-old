@@ -47,12 +47,13 @@ Intuitively then, the multiplicity of a system is a product of that of its const
 \end{align}
 and this entity is uniquely described by thermodynamic variables. In the case of an
 ideal gas, $$
-\mathrm{def}\;\Omega (V, N, E)
-$$ is a state function of the system. 
+\Omega (V, N, E)
+$$ is such a state function. 
 
-Now because we want this quantity to extend linearly as we increase the volume, the total
-energy and the number of particles, we take the logarithm of $\Omega$. This is called the 
-*extensivity* requirement. This requirement allows us to treat the entropic state function
+Now because we want this quantity to extend linearly as we increase the volume ($V$), 
+the total energy ($E$) and the number of particles ($N$), it is the logarithm of 
+$\Omega$ that is more suitable. This is called the *extensivity* requirement. 
+This requirement allows us to treat the entropic state function
 as a first order homogeneous equation, and use Legendre's transformation to derive other
 thermodynamic entities such as the Gibbs Free Energy, Enthalpy and so on.
 \begin{align}
@@ -62,27 +63,23 @@ S (\lambda E, \lambda V, \lambda N) = \lambda S(E, V, N),
 
 #### Temperature
 
-Now, we can derive the concept of *temperature*. In a Canonical Ensemble,
-a micro system is in "thermal equilibrium" with a large heat bath (a thermostat).
-Because the multiplicity of the entire system has to be conserved, the overall
-phase space of the combined system is at it's maximum. From these assumptions
-we can show that for two systems to be in thermal "equal terms" it means the following
-ratio has to be identical
+Now, we can derive the concept of *temperature*. Temperature is usually derived with 
+Canonical ensemble. Canonical ensemble describes a small system (usually quantized and
+discrete) in thermal equilibrium with a larger thermal bath (thermostat). In addition 
+the whole system is isolated with conserved overall energy. Now, because the multiplicity 
+of the entire system has to be conserved, the overall phase volume of the combined system 
+is at it's maximum. Together with overall conservation of energy, we can show that for 
+two systems to be in thermal "equal terms" it means the following ratio has to be identical
 \begin{align}
 \frac{1}{T} = \frac{\Delta{S_0}}{\Delta{E_0}} = \frac{\Delta{S_{bath}}}{\Delta{E_{bath}}}.
 \end{align}
 This, is the statistical mechanics' definition of *temperature*.
 
-#### Shannon's Entropy
+> **Note**: the maximum phase volume assumption is essentially a *Maximum Likelihood 
+Estimation (MLE)*. You can similarly derive the Boltzmann distribution for a discrete
+system from this assumption alone.
 
-For two microstates $1$ and $2$, the relative probability is
-\begin{align}
-\frac{P_1}{P_2} = e^{-\Delta{E}/k_\beta T}. \label{rel_P}
-\end{align}
-The minus sign comes from the assumption that the entropy of the 
-two microstates are both 1 in the case of a two level system, and
-it is the overall combined system for which the multiplicity 
-needs to be conserved. (Canonical Ensemble)
+#### Shannon's Entropy
 
 Now we need to derive Shannon's entropy 
 \begin{align}
@@ -99,8 +96,18 @@ where $N_A$ is the Avogadro's number. Thus in the thermodynamic
 limit where the partition function has a factor of $N \;\mathrm{mole}$
 in the front, $k_\beta$ keeps the terms close to 1.
 
-To derive $\eqref{def_H}$, we need the partition function. From 
-$\eqref{rel_P}$ we can derive that 
+To derive $\eqref{def_H}$, we need the partition function. 
+We will again work with the Canonical ensemble. Suppose the small
+system in the ensemble has two microstates $1$ and $2$, 
+we can then derive that the relative probability between the 
+occurrence of these states is
+\begin{align}
+\frac{P_1}{P_2} = e^{-\Delta{E}/k_\beta T}. \label{rel_P}
+\end{align}
+The minus sign comes from the assumption that the entropy of the 
+two microstates are both 0 because there is no disorder. Because the 
+overall combined system for which the multiplicity needs to be 
+conserved. (Canonical Ensemble)
 \begin{align}
 P_i = Z^{-1} \cdot e^{- \beta \epsilon_i} \label{def_P}
 \end{align}
