@@ -26,17 +26,40 @@ engraved on his tomb.
 
 This definition follows directly from the *multiplicity assumption* in 
 statistical mechanics. In physics textbooks, we typically use $\Omega$ 
-for *multiplicity* instead of $W$ as Boltzmann writes
+for *multiplicity* instead of $W$
 \begin{align}
 S = k_\beta \ln{\Omega}.
 \end{align}
 
-Now, *temperature* in the system can be derived from the thermal 
-equilibrium assumption in a Cannonical Ensemble (this is what it
-means for two systems to be in thermal "equal terms").
+In a statistical ensemble, the state space for a quantized discrete system
+is equivalent to the *multiplicity* of the discrete system. The [Liouville's 
+Theorem] argues thatunder Hamiltonian mechanics, the points in a thermal ensemble
+forms an incompressible liquid. By showing that flow lines in the phase space
+under Hamiltonian dynamics *can not* cross each other, we can prove that the
+*phase volume* of the ensemble stays constant. As a result, in a reversible process,
+the multiplicity of an ensemble is conserved.
+
+[Liouville's Theorem]: https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)
+
+Intuitively, the multiplicity of a system is a product of that of its constitutes
+\begin{align}
+\Omega_{\text{system}} = \Omega_a \Omega_b ...
+\end{align}
+
+#### Temperature
+
+Now, we can derive the concept of *temperature*. In a Canonical Ensemble,
+a micro system is in "thermal equilibrium" with a large heat bath (a thermostat).
+Because the multiplicity of the entire system has to be conserved, the overall
+phase space of the combined system is at it's maximum. From these assumptions
+we can show that for two systems to be in thermal "equal terms" it means the following
+ratio has to be identical
 \begin{align}
 \frac{1}{T} = \frac{\Delta{S}}{\Delta{E}}.
 \end{align}
+This, is the statistical mechanics' definition of *temperature*.
+
+#### Entropy
 
 For two microstates $1$ and $2$, the relative probability is
 \begin{align}
