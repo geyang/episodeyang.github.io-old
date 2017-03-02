@@ -32,8 +32,8 @@ S = k_\beta \ln{\Omega}.
 \end{align}
 
 In a statistical ensemble, the state space for a quantized discrete system
-is equivalent to the *multiplicity* of the discrete system. The [Liouville's 
-Theorem] argues thatunder Hamiltonian mechanics, the points in a thermal ensemble
+is equivalent to the *multiplicity* of the statistical ensemble under discussion. The [Liouville's 
+Theorem] argues that under Hamiltonian mechanics, the points in a statistical ensemble
 forms an incompressible liquid. By showing that flow lines in the phase space
 under Hamiltonian dynamics *can not* cross each other, we can prove that the
 *phase volume* of the ensemble stays constant. As a result, in a reversible process,
@@ -41,9 +41,23 @@ the multiplicity of an ensemble is conserved.
 
 [Liouville's Theorem]: https://en.wikipedia.org/wiki/Liouville's_theorem_(Hamiltonian)
 
-Intuitively, the multiplicity of a system is a product of that of its constitutes
+Intuitively then, the multiplicity of a system is a product of that of its constitutes
 \begin{align}
-\Omega_{\text{system}} = \Omega_a \Omega_b ...
+\Omega_{\text{system}} = \Omega_a \Omega_b ...,
+\end{align}
+and this entity is uniquely described by thermodynamic variables. In the case of an
+ideal gas, $$
+\mathrm{def}\;\Omega (V, N, E)
+$$ is a state function of the system. 
+
+Now because we want this quantity to extend linearly as we increase the volume, the total
+energy and the number of particles, we take the logarithm of $\Omega$. This is called the 
+*extensivity* requirement. This requirement allows us to treat the entropic state function
+as a first order homogeneous equation, and use Legendre's transformation to derive other
+thermodynamic entities such as the Gibbs Free Energy, Enthalpy and so on.
+\begin{align}
+S (\lambda E, \lambda V, \lambda N) = \lambda S(E, V, N),
+\;\text{where}\; S = k_\beta \ln \Omega.
 \end{align}
 
 #### Temperature
@@ -55,7 +69,7 @@ phase space of the combined system is at it's maximum. From these assumptions
 we can show that for two systems to be in thermal "equal terms" it means the following
 ratio has to be identical
 \begin{align}
-\frac{1}{T} = \frac{\Delta{S}}{\Delta{E}}.
+\frac{1}{T} = \frac{\Delta{S_0}}{\Delta{E_0}} = \frac{\Delta{S_{bath}}}{\Delta{E_{bath}}}.
 \end{align}
 This, is the statistical mechanics' definition of *temperature*.
 
