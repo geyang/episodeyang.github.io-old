@@ -161,8 +161,8 @@ H & = \langle \ln{ P^{-1} }\rangle \\\
 It makes sense that in a distribution, $\ln{(1/P_i)}$ is the amount 
 of information that such event $i$ carries. Consequently, the expected
 value of $\ln(1/P_i)$ over all possible events $\{i\}$ is the information
-entropy of the distribution. This information is the logrithm of the 
-multiplicity of the system (the state space). Therefore entropy describes
+entropy of the distribution. This information is the logarithm of the 
+volume of the ensemble in the phase space. Therefore entropy describes
 the amount of disorder a distribution contains. 
 
 > $H(x) \ge 0$, entropy is always non-negative. $H_x = 0$ when $X$ is deterministic.
