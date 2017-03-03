@@ -119,6 +119,8 @@ two microstates are both 0 because there is no disorder. Now because the
 overall combined system need to have its multiplicity conserved, the likelihood
 of $1$ happening over $2$ is one over the probability of states for the rest of 
 the combined system.
+
+Now $\eqref{rel_P}$ can only be true if the probability is
 \begin{align}
 P_i = Z^{-1} \cdot e^{- \beta \epsilon_i} \label{def_P}
 \end{align}
