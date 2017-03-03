@@ -25,7 +25,7 @@ engraved on his tomb.
 </figure>
 
 This definition follows directly from the *multiplicity assumption* in 
-statistical mechanics. In physics textbooks, we typically use $\Omega$ 
+statistical mechanics. In physics textbooks, we sometimes use $\Omega$ 
 for *multiplicity* instead of $W$
 \begin{align}
 S = k_\beta \ln{\Omega}.
@@ -34,7 +34,7 @@ S = k_\beta \ln{\Omega}.
 In a statistical ensemble, the state space for a quantized discrete system
 is equivalent to the *multiplicity* of the statistical ensemble under discussion. The [Liouville's 
 Theorem] argues that under Hamiltonian mechanics, the points in a statistical ensemble
-forms an incompressible liquid. By showing that flow lines in the phase space
+form an incompressible liquid. By showing that flow lines in the phase space
 under Hamiltonian dynamics *can not* cross each other, we can prove that the
 *phase volume* of the ensemble stays constant. As a result, in a reversible process,
 the multiplicity of an ensemble is conserved.
@@ -63,21 +63,33 @@ S (\lambda E, \lambda V, \lambda N) = \lambda S(E, V, N),
 
 #### Temperature
 
-Now, we can derive the concept of *temperature*. Temperature is usually derived with 
+Now, we can derive the concept of *temperature*. Temperature is usually derived with the
 Canonical ensemble. Canonical ensemble describes a small system (usually quantized and
-discrete) in thermal equilibrium with a larger thermal bath (thermostat). In addition 
-the whole system is isolated with conserved overall energy. Now, because the multiplicity 
-of the entire system has to be conserved, the overall phase volume of the combined system 
-is at it's maximum. Together with overall conservation of energy, we can show that for 
-two systems to be in thermal "equal terms" it means the following ratio has to be identical
+discrete in the textbook) in thermal equilibrium with a larger thermal bath (thermostat).
+In addition the whole system is isolated with conserved overall energy. Now, because the 
+multiplicity of the entire system has to be conserved, the overall phase volume of the 
+combined system is at it's maximum. Together with overall conservation of energy, we can
+show that in order for two systems to be in thermal "equal terms", the following ratio has
+to equal
 \begin{align}
 \frac{1}{T} = \frac{\Delta{S_0}}{\Delta{E_0}} = \frac{\Delta{S_{bath}}}{\Delta{E_{bath}}}.
 \end{align}
-This, is the statistical mechanics' definition of *temperature*.
+This, is the statistical mechanics' definition of *temperature*. You can think of this
+definition as temperature being the constant that relates the marginal ratio between
+the energy labels for each macrostates versus the phase space that the macrostate 
+occupies. For two systems to be in thermal equilibrium, both the multiplicity change *and*
+the energy transfer need to be conserved. This ratio that the two system shares is their
+temperature.
 
 > **Note**: the maximum phase volume assumption is essentially a *Maximum Likelihood 
 Estimation (MLE)*. You can similarly derive the Boltzmann distribution for a discrete
 system from this assumption alone.
+
+Interestingly, by switching the sign of energy you can define *negative temperature*. Systems
+with bounded energy levels can have negative temperature, but ones without a bound can not.
+For these bounded systems (like in an Ising model), the system temperature can be swept up
+for $T \gt 0$ and down for $T \lt 0$. The temperature *cannot* cross zero though, and that
+is the third law of thermodynamics :)
 
 #### Shannon's Entropy
 
@@ -85,8 +97,7 @@ Now we need to derive Shannon's entropy
 \begin{align}
 H = -\sum_{i}{P_i \cdot \log{P_i}}. \label{def_H}
 \end{align} Note the missing Boltzmann Constant
-in this defintion. The thermodynamic defintion is different by
-a factor $k_\beta$.
+in this defintion. The thermodynamic definition differs by a factor $k_\beta$.
 
 > **Note**: 
 In thermodynamics, Boltsmann's constant is an important factor not 
@@ -98,16 +109,16 @@ in the front, $k_\beta$ keeps the terms close to 1.
 
 To derive $\eqref{def_H}$, we need the partition function. 
 We will again work with the Canonical ensemble. Suppose the small
-system in the ensemble has two microstates $1$ and $2$, 
-we can then derive that the relative probability between the 
-occurrence of these states is
+system in the ensemble has two microstates $1$ and $2$, then the relative 
+probability between the occurrence of these states would be
 \begin{align}
 \frac{P_1}{P_2} = e^{-\Delta{E}/k_\beta T}. \label{rel_P}
 \end{align}
-The minus sign comes from the assumption that the entropy of the 
-two microstates are both 0 because there is no disorder. Because the 
-overall combined system for which the multiplicity needs to be 
-conserved. (Canonical Ensemble)
+The minus sign comes from the following: we assume that the entropy of the 
+two microstates are both 0 because there is no disorder. Now because the 
+overall combined system need to have its multiplicity conserved, the likelihood
+of $1$ happening over $2$ is one over the probability of states for the rest of 
+the combined system.
 \begin{align}
 P_i = Z^{-1} \cdot e^{- \beta \epsilon_i} \label{def_P}
 \end{align}
